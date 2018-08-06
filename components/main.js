@@ -1,31 +1,13 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native";
 
 export default class Main extends Component {
   static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "white"
-    },
-    headerTintColor: "black",
-    headerTitleStyle: {
-      fontWeight: "bold",
-      fontSize: 20,
-      marginBottom: 5
-    },
-    headerStyle: {
-      height: 50,
-      backgroundColor: "white",
-      shadowColor: "black",
-      shadowRadius: 5,
-      shadowOpacity: 0.2,
-      shadowOffset: {
-        height: 3,
-        width: 0
-      }
-    }
+    header: null,
   };
   render() {
     return (
+      <ImageBackground source={require('./images/wlp.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
       <Text style={styles.adal}>أضل</Text>
       <Text style={styles.adal1}>«Вкушайте благую снедь (халяль), которой Мы наделили вас, но не преступайте границы дозволенного в этом, а не то на вас падет Мой Гнев» (Коран, 20: 81). </Text>
@@ -66,64 +48,73 @@ export default class Main extends Component {
         </TouchableOpacity>       
         </View>
       </View>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
   adal: {
-    marginTop: 30,
+    color: 'white',
+    marginTop: 50,
     fontSize: 50,
     textAlign: 'center',
   },
   adal1: {
+    color: 'white',
     marginTop: 20,
     fontSize: 16,
     textAlign: 'center',
   },
   texty: {
     textAlign: "center",
+    color: 'white',
+    fontWeight: 'bold',
     },
     texty1: {
       textAlign: "center",
       marginTop: 5,
+      color: 'white',
+      fontWeight: 'bold',
       },
   container0: {
-    width: 90,
-    height: 90,
+    width: 120,
+    height: 123,
+    borderRadius:10,
+    borderColor: '#fff',
+    backgroundColor: 'rgba(255,255,255,0.3)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
   },
   container: {
     flex: 1,
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container2: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 37,
-    marginLeft: 50,
-    marginRight: 50,
+    marginTop: 30,
+    marginLeft: 45,
+    marginRight: 45,
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container3: {
     flexDirection: 'row',
-    marginLeft: 50,
-    marginBottom: 40,
-    marginRight: 50,
+    marginLeft: 45,
+    marginBottom: 20,
+    marginRight: 45,
     justifyContent: 'space-between',
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container4: {
     flexDirection: 'row',
-    marginLeft: 50,
-    marginRight: 50,
-    marginBottom: 40,
+    marginLeft: 45,
+    marginRight: 45,
+    marginBottom: 20,
     justifyContent: 'space-between',
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   paragraph: {
     margin: 30,
@@ -133,10 +124,12 @@ const styles = StyleSheet.create({
     color: "#34495e"
   },
   image: { 
+    paddingLeft: 3,
     width: 85,
     height: 85,
   },
   image1: { 
+    paddingLeft: 3,
     width: 80,
     height: 80,
   }

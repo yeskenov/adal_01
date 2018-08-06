@@ -11,7 +11,8 @@ const RootStack = createStackNavigator({
   RestaurantList: { screen: RestaurantList },
   Additives: { screen: Additives },
   Products: { screen: Products },
-});
+},
+);
 
 export default class App extends React.Component {
   render() {
