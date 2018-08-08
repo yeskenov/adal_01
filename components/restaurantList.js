@@ -125,7 +125,7 @@ export default class Additives extends Component {
               <View style={{ flex: 1, flexDirection: "column" }}>
                 <Text style={styles.title}> {item.name} </Text>
                 <Text style={styles.adressStyle}>Адрес: {item.adress} </Text>
-                <Text style={styles.content}>{item.contact}</Text>
+                <Text style={styles.content}>{item.cuisine}</Text>
               </View>
               <Image style={styles.imgCertif} source={this.certifImage(item)} />
             </View>
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   },
   title: {
     padding: 5,
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "bold"
   },
   imgCertif: {

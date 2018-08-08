@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native";
 
 export default class Products extends Component {
   static navigationOptions = {
     title: "Продукты",
+    headerStyle: {
+      backgroundColor: "rgba(255,255,255,0.3)",
+    },
     headerStyle: {
       backgroundColor: "white"
     },
@@ -27,9 +30,10 @@ export default class Products extends Component {
   };
   render() {
     return (
+      <ImageBackground source={require('./images/wlp.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
        <View style={styles.container2}>
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("RestaurantList")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Meat")} >
           <Image source={require('./images/food_logos/1.png')} style={styles.image} />
             <Text style={styles.texty}>Мясо</Text>
           </TouchableOpacity>
@@ -91,50 +95,55 @@ export default class Products extends Component {
           </TouchableOpacity>  
         </View>
       </View>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container0: {
-    width: 90,
-    height: 90,
+    width: 112,
+    height: 112,
+    borderRadius:10,
+    borderColor: '#fff',
+    backgroundColor: 'rgba(255,255,255,0.3)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
   },
   texty: {
   textAlign: "center",
+  color: 'white',
+  fontWeight: 'bold',
   },
   container: {
     flex: 1,
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container2: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 30,
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: 10,
+    marginRight: 10,
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container3: {
     flexDirection: 'row',
-    marginLeft: 20,
-    marginBottom: 55,
-    marginRight: 20,
+    marginLeft: 10,
+    marginBottom: 32,
+    marginRight: 10,
     justifyContent: 'space-between',
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   container4: {
     flexDirection: 'row',
-    marginLeft: 20,
-    marginRight: 20,
-    marginBottom: 60,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 30,
     justifyContent: 'space-between',
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1"
   },
   paragraph: {
     margin: 30,
@@ -144,8 +153,8 @@ const styles = StyleSheet.create({
     color: "#34495e"
   },
   image: { 
-    width: 90,
-    height: 90,
+    width: 80,
+    height: 80,
 
   }
 });

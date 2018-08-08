@@ -14,7 +14,7 @@ import data from "../test.json";
 
 export default class Additives extends Component {
   static navigationOptions = {
-    title: "Добавки",
+    title: "E-Numbers",
     headerStyle: {
       backgroundColor: "white"
     },
@@ -36,6 +36,10 @@ export default class Additives extends Component {
       }
     }
   };
+  
+  
+  
+  
   constructor(props) {
     super(props);
 
@@ -103,7 +107,9 @@ export default class Additives extends Component {
     else {
     return { color:'red' };}
   };
+  
 
+  
   render() {
     const { isLoading, filteredData, data, text } = this.state;
     const target = (text === '') ? data : filteredData;
@@ -129,17 +135,34 @@ export default class Additives extends Component {
         <FlatList
           data={target}
           renderItem={({ item }) => (
-            <View style={styles.card}>
+            <View style={styles.main} >
               <Text style={styles.numStyle}>
                 <Text style={this.color(item)}>{item.number} - {item.status}</Text>
               </Text>
 
               <Text style={styles.content}> {item.description} </Text>
             </View>
+
+
+
+// <View style={styles.main}>
+//             <Image source={imageUri} style={styles.image} />
+
+//             <View style={{ flex: 1, flexDirection: "column" }}>
+//               <Text style={styles.title}> {name} </Text>
+//               <View style={{ flexDirection: "column" }}>
+//                 <Text style={styles.adressStyle}>Адрес: {item.adress} </Text>
+//               </View>
+//             </View>
+//             <View style={{ flexDirection: "column" }}>
+//               <Image style={styles.imgCertif} source={this.certifImage(item)} />
+//               <Text style={styles.content}>{item.contact}</Text>
+//             </View>
+//           </View>
           )}
 
           keyExtractor={item => item.number}
-          ItemSeparatorComponent={this.renderSeparator}
+         
         />
 
       </View>
@@ -165,24 +188,44 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "column"
   },
-
-  TextInputStyleClass: {
-    marginTop: 10,
-    textAlign: "center",
-    height: 40,
-    borderWidth: 1,
-    borderColor: "#009688",
-    borderRadius: 7,
-    backgroundColor: "#FFFFFF"
+  main: {
+    flex: 1,
+    flexDirection: "column",
+    //borderWidth: 1,
+    margin: 5,
+    borderRadius: 4,
+    borderColor: "grey",
+    shadowColor: "grey",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+    backgroundColor: "white"
   },
 
+  TextInputStyleClass: {
+    marginTop: 5,
+    margin: 5,
+    textAlign: "center",
+    height: 40,
+
+    borderRadius: 4,
+    backgroundColor: "#FFFFFF",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.4,
+    shadowRadius: 2
+  },
   content: {
     textAlign: "center",
-    fontSize: 20
+    fontSize: 20,
+    margin: 10,
   },
   numStyle: {
     fontSize: 25,
     justifyContent: "center",
-    textAlign: "center"
+    textAlign: "center",
+    marginTop: 10,
+
+    //margin: 10,
   }
 });
