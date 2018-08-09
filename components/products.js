@@ -38,18 +38,18 @@ export default class Products extends Component {
             <Text style={styles.texty}>Мясо</Text>
           </TouchableOpacity>
        
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Products")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Sweets")} >
           <Image source={require('./images/food_logos/2.png')} style={styles.image} />
             <Text style={styles.texty}>Сладости</Text>
         </TouchableOpacity>       
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("RestaurantList")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Bird")} >
           <Image source={require('./images/food_logos/3.png')} style={styles.image} />
             <Text style={styles.texty}>Курица</Text>
           </TouchableOpacity>
         </View>
         
         <View style={styles.container3}>
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Additives")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Milk")} >
           <Image source={require('./images/food_logos/4.png')} style={styles.image} />
             <Text style={styles.texty}>Молочные продукты </Text>
           </TouchableOpacity>
@@ -69,11 +69,11 @@ export default class Products extends Component {
             <Text style={styles.texty}>Макаронные изделия</Text>
           </TouchableOpacity>
        
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Additives")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Drinks")} >
           <Image source={require('./images/food_logos/8.png')} style={styles.image} />
             <Text style={styles.texty}>Соки/Напитки</Text>
         </TouchableOpacity>     
-        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("RestaurantList")} >
+        <TouchableOpacity style={styles.container0} onPress={() => this.props.navigation.navigate("Priprava")} >
           <Image source={require('./images/food_logos/9.png')} style={styles.image} />
             <Text style={styles.texty}>Приправы</Text>
           </TouchableOpacity>  
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   container3: {
     flexDirection: 'row',
     marginLeft: 10,
-    marginBottom: 32,
+    marginBottom: 30,
     marginRight: 10,
     justifyContent: 'space-between',
     //paddingTop: Constants.statusBarHeight,

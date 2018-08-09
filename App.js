@@ -5,13 +5,24 @@ import Additives from "./components/additives";
 import RestaurantList from "./components/restaurantList";
 import Products from "./components/products";
 import Meat from "./components/meat"
+import Milk from "./components/milk"
+import Sweets from "./components/sweets"
+import Bird from "./components/bird"
+import Drinks from "./components/drinks"
+import Priprava from "./components/priprava"
 
 const RootStack = createStackNavigator({
   Main: { screen: Main },
   RestaurantList: { screen: RestaurantList },
   Additives: { screen: Additives },
   Products: { screen: Products },
-  Meat: {screen: Meat}
+  Meat: {screen: Meat},
+  Milk: {screen: Milk},
+  Sweets: {screen: Sweets},
+  Bird: {screen: Bird},
+  Drinks: {screen: Drinks},
+  Priprava: {screen: Priprava}
+
 },
 );
 
